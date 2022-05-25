@@ -35,3 +35,12 @@ resource "aws_private_subnet " "private-subnet" {
     Name = "workout_private_subnet"
   }
 }
+
+resource "aws_internet_gateway" "My_IGW" {
+  vpc_id = aws_vpc.my_vpc.id
+
+  tags = {
+    "Name" = "igw"
+  }
+  
+}
